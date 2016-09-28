@@ -1,0 +1,210 @@
+version = "%%VERSION%%"
+description =
+"Implementations for network-related module types from MirageOS."
+requires = "mirage-types ipaddr cstruct"
+archive(byte) = "tcpip.cma"
+archive(byte, plugin) = "tcpip.cma"
+archive(native) = "tcpip.cmxa"
+archive(native, plugin) = "tcpip.cmxs"
+xen_linkopts = "-ltcpip_xen_stubs"
+exists_if = "tcpip.cma"
+
+package "xen" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ archive(byte) = "tcpip_xen.cma"
+ archive(byte, plugin) = "tcpip_xen.cma"
+ archive(native) = "tcpip_xen.cmxa"
+ archive(native, plugin) = "tcpip_xen.cmxs"
+ exists_if = "tcpip_xen.cma"
+)
+
+package "udpv6-socket" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires = "lwt lwt.unix ipaddr.unix cstruct.lwt io-page.unix"
+ archive(byte) = "udpv6-socket.cma"
+ archive(byte, plugin) = "udpv6-socket.cma"
+ archive(native) = "udpv6-socket.cmxa"
+ archive(native, plugin) = "udpv6-socket.cmxs"
+ exists_if = "udpv6-socket.cma"
+)
+
+package "udpv4-socket" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires = "lwt ipaddr.unix cstruct.lwt"
+ archive(byte) = "udpv4-socket.cma"
+ archive(byte, plugin) = "udpv4-socket.cma"
+ archive(native) = "udpv4-socket.cmxa"
+ archive(native, plugin) = "udpv4-socket.cmxs"
+ exists_if = "udpv4-socket.cma"
+)
+
+package "udp" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs mirage-types ipaddr cstruct cstruct.ppx lwt result rresult mirage-profile tcpip"
+ archive(byte) = "udp.cma"
+ archive(byte, plugin) = "udp.cma"
+ archive(native) = "udp.cmxa"
+ archive(native, plugin) = "udp.cmxs"
+ exists_if = "udp.cma"
+)
+
+package "tcpv6-socket" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires = "lwt lwt.unix ipaddr.unix cstruct.lwt io-page.unix"
+ archive(byte) = "tcpv6-socket.cma"
+ archive(byte, plugin) = "tcpv6-socket.cma"
+ archive(native) = "tcpv6-socket.cmxa"
+ archive(native, plugin) = "tcpv6-socket.cmxs"
+ exists_if = "tcpv6-socket.cma"
+)
+
+package "tcpv4-socket" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "lwt lwt.unix ipaddr.unix cstruct.lwt io-page.unix mirage-types.lwt mirage-types"
+ archive(byte) = "tcpv4-socket.cma"
+ archive(byte, plugin) = "tcpv4-socket.cma"
+ archive(native) = "tcpv4-socket.cmxa"
+ archive(native, plugin) = "tcpv4-socket.cmxs"
+ exists_if = "tcpv4-socket.cma"
+)
+
+package "tcp" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs mirage-types ipaddr cstruct cstruct.ppx lwt result rresult mirage-profile io-page tcpip duration"
+ archive(byte) = "tcp.cma"
+ archive(byte, plugin) = "tcp.cma"
+ archive(native) = "tcp.cmxa"
+ archive(native, plugin) = "tcp.cmxs"
+ exists_if = "tcp.cma"
+)
+
+package "stack-socket" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires = "lwt lwt.unix ipaddr.unix io-page.unix logs"
+ archive(byte) = "tcpip-stack-socket.cma"
+ archive(byte, plugin) = "tcpip-stack-socket.cma"
+ archive(native) = "tcpip-stack-socket.cmxa"
+ archive(native, plugin) = "tcpip-stack-socket.cmxs"
+ exists_if = "tcpip-stack-socket.cma"
+)
+
+package "stack-direct" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires = "logs mirage-types ipaddr lwt tcpip.dhcpv4"
+ archive(byte) = "tcpip-stack-direct.cma"
+ archive(byte, plugin) = "tcpip-stack-direct.cma"
+ archive(native) = "tcpip-stack-direct.cmxa"
+ archive(native, plugin) = "tcpip-stack-direct.cmxs"
+ exists_if = "tcpip-stack-direct.cma"
+)
+
+package "ipv6" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs io-page mirage-types ipaddr cstruct cstruct.ppx lwt tcpip tcpip.ethif duration"
+ archive(byte) = "ipv6.cma"
+ archive(byte, plugin) = "ipv6.cma"
+ archive(native) = "ipv6.cmxa"
+ archive(native, plugin) = "ipv6.cmxs"
+ exists_if = "ipv6.cma"
+)
+
+package "ipv4" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs io-page mirage-types ipaddr cstruct.ppx lwt result rresult tcpip tcpip.ethif"
+ archive(byte) = "ipv4.cma"
+ archive(byte, plugin) = "ipv4.cma"
+ archive(native) = "ipv4.cmxa"
+ archive(native, plugin) = "ipv4.cmxs"
+ exists_if = "ipv4.cma"
+)
+
+package "icmpv4-socket" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires = "lwt lwt.unix ipaddr.unix cstruct.lwt io-page.unix tcpip.icmpv4"
+ archive(byte) = "icmpv4-socket.cma"
+ archive(byte, plugin) = "icmpv4-socket.cma"
+ archive(native) = "icmpv4-socket.cmxa"
+ archive(native, plugin) = "icmpv4-socket.cmxs"
+ exists_if = "icmpv4-socket.cma"
+)
+
+package "icmpv4" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs mirage-types cstruct cstruct.ppx lwt ipaddr result rresult mirage-profile tcpip"
+ archive(byte) = "icmpv4.cma"
+ archive(byte, plugin) = "icmpv4.cma"
+ archive(native) = "icmpv4.cmxa"
+ archive(native, plugin) = "icmpv4.cmxs"
+ exists_if = "icmpv4.cma"
+)
+
+package "ethif" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs mirage-types ipaddr cstruct lwt mirage-profile result rresult"
+ archive(byte) = "ethif.cma"
+ archive(byte, plugin) = "ethif.cma"
+ archive(native) = "ethif.cmxa"
+ archive(native, plugin) = "ethif.cmxs"
+ exists_if = "ethif.cma"
+)
+
+package "dhcpv4" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "logs io-page mirage-types ipaddr cstruct cstruct.ppx lwt tcpip.udp duration"
+ archive(byte) = "dhcpv4.cma"
+ archive(byte, plugin) = "dhcpv4.cma"
+ archive(native) = "dhcpv4.cmxa"
+ archive(native, plugin) = "dhcpv4.cmxs"
+ exists_if = "dhcpv4.cma"
+)
+
+package "arpv4" (
+ version = "%%VERSION%%"
+ description =
+ "Implementations for network-related module types from MirageOS."
+ requires =
+ "mirage-types logs ipaddr cstruct cstruct.ppx lwt result rresult tcpip.ethif duration"
+ archive(byte) = "arpv4.cma"
+ archive(byte, plugin) = "arpv4.cma"
+ archive(native) = "arpv4.cmxa"
+ archive(native, plugin) = "arpv4.cmxs"
+ exists_if = "arpv4.cma"
+)
