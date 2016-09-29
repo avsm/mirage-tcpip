@@ -6,7 +6,7 @@ archive(byte) = "tcpip.cma"
 archive(byte, plugin) = "tcpip.cma"
 archive(native) = "tcpip.cmxa"
 archive(native, plugin) = "tcpip.cmxs"
-xen_linkopts = "-ltcpip_xen_stubs"
+xen_linkopts = "-ltcpip_stubs_xen"
 exists_if = "tcpip.cma"
 
 package "xen" (

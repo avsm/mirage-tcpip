@@ -40,5 +40,4 @@ let () =
    Pkg.mllib "src/tcp/tcp.mllib";
    Pkg.mllib "src/dhcpv4/dhcp_clientv4.mllib";
    Pkg.mllib "src/stack/tcpip_stack_direct.mllib";
-   Pkg.clib ~cond:unix "src/checksum/tcpip_chec
   ] 
